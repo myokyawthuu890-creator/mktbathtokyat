@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Record": {
+      "title": "Conversion Record",
+      "description": "Represents a currency conversion history",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "description": "User ID of the owner"
+        },
+        "amountTHB": {
+          "type": "number",
+          "description": "Amount converted from THB"
+        },
+        "amountMMK": {
+          "type": "number",
+          "description": "Converted result in MMK"
+        },
+        "rate": {
+          "type": "number",
+          "description": "Exchange rate used"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["ownerId", "amountTHB", "amountMMK", "rate", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/records/{recordId}": {
+      "schema": {
+        "$ref": "#/entities/Record"
+      },
+      "description": "Collection of user conversion records"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /records/{recordId} {
+      allow read, delete: if true;
+      allow create: if true;
+      allow update: if true;
+    }
+    
+    match /customers/{customerId} {
+      allow read, delete: if true;
+      allow create: if true;
+      allow update: if true;
+    }
+    
+    match /bankingCategories/{categoryId} {
+      allow read, write: if true;
+    }
+    
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+

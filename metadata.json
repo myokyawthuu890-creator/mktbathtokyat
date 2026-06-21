@@ -1,0 +1,6 @@
+{
+  "name": "TBH to Kyat Converter",
+  "description": "A simple welcome page that navigates to a Thai Baht (TBH) to Myanmar Kyat converter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
